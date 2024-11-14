@@ -1,0 +1,98 @@
+.about {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px 100px;
+}
+.about_container{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 10px;
+
+}
+.about_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+
+}
+.about_item {
+    background: #F5F6FA;
+    width: 24%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+.about_img {
+    width: 100px;
+    height: 100px;
+    background-color:rgba(33, 70, 109, 1);
+    margin-bottom: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_inners{
+    display: block;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.swiper-pagination {
+  display: block !important;  /* Pagination'ni ko'rinadigan qilib qo'yish */
+  visibility: visible !important; /* Pagination'ni ko'rsatish */
+}
+.swiper-pagination-bullet {
+  margin: 0 4px; 
+  width: 8px;
+height: 8px;
+gap: 0px;
+border-radius: 32px;
+background: #21466D59;
+
+}
+.swiper-pagination-bullet-active {
+  background: #FFC82A !important;
+ width: 16px !important;
+height: 8px !important;
+border-radius: 32px !important;
+
+}
+.about_info_title {
+    width: 90%;
+    font-family: Manrope;
+font-size: 32px;
+font-weight: 700;
+line-height: 38.4px;
+text-align: left;
+text-transform: uppercase;
+    color: rgba(33, 70, 109, 1);
+    margin-bottom: 20px;
+}
+.about_info_text {
+    width: 90%;
+    font-family: Manrope;
+font-size: 18px;
+font-weight: 400;
+line-height: 25.2px;
+text-align: left;
+
+    color: rgba(33, 70, 109, 0.35);
+}
+@media screen and (max-width: 1100px) {
+    .about{
+        padding: 0px 20px;
+    }
+
+}
