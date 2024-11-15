@@ -1,96 +1,92 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import React, { useRef } from "react";
+import "./App.css";
 
-// import './App.css' // CSS faylini import qilish
-import GirlImage from '../../assets/logos/girl.png'
-import GirlsImage from '../../assets/logos/girls.png'
+const Slider = () => {
+  const slideRef = useRef(); // Slaydni boshqarish uchun
 
-import TraditionImage from '../../assets/logos/tradition.png'
-import LessonImage from '../../assets/logos/lesson.png'
+  // Keyingi slaydga o'tish
+  const handleNext = () => {
+    const items = slideRef.current.children;
+    slideRef.current.appendChild(items[0]); // Birinchi elementni oxiriga o'tkazadi
+  };
 
-const photos = [
-  {
-            id: 1,
-            image: GirlImage,
-            content: "birinchi qor yoqqan kuni talabalar qor o’ynashganda!",
-        },
-        { id: 2, image: GirlsImage, content: "navruz bayrami munosabati bilan o'tkazilgan tadbirda qizlarimiz milliy liboslarda! " },
-        { id: 3, image: TraditionImage, content: "Navruz sayli jarayonlaridan foto lavhalar!" },
-        { id: 4, image: LessonImage, content: `"Fan javohirlari" grant imtixonlari o'tkazildi` },
-];
+  // Oldingi slaydga o'tish
+  const handlePrev = () => {
+    const items = slideRef.current.children;
+    slideRef.current.prepend(items[items.length - 1]); // Oxirgi elementni boshiga o'tkazadi
+  };
 
-const PhotoGallery = () => {
   return (
-    <div style={{ padding: "20px", backgroundColor: "#27476e", color: "white" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>USAT ATMOSFERASI FOTOGALEREYA</h2>
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={3}
-        pagination={{ clickable: true }}
-        style={{ paddingBottom: "20px" }}
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-      >
-        {photos.map((photo, index) => (
-          <SwiperSlide key={index}>
+    <div id="main">
+      <div className="container">
+        <div className="slide" ref={slideRef}>
+          {/* Slayder elementlari */}
+          {[
+            {
+              backgroundImage:
+                "https://images.unsplash.com/photo-1610809376778-928ee2c3a561?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              name: "BMW M4",
+              desc:
+                "The 2024 BMW M4 Coupe delivers signature pulse-pounding BMW M performance and aesthetics to match.",
+            },
+            {
+              backgroundImage:
+                "https://images.unsplash.com/photo-1625179904634-243c6cdd6421?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              name: "Porsche 911",
+              desc:
+                "Engineered around Porsche’s iconic 911 engine with unique hybrid technologies and delivering unsurpassed Porsche and hybrid performance.",
+            },
+            {
+              backgroundImage:
+                "https://images.unsplash.com/photo-1597935370784-051cdebbe6a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              name: "Ferrari 488 Pista",
+              desc:
+                "The Ferrari 488 Pista is powered by the most powerful V8 engine in the Maranello marque’s history and is the company’s special series sports car.",
+            },
+            {
+              backgroundImage:
+                "https://images.unsplash.com/photo-1453491945771-a1e904948959?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              name: "Tesla Model S",
+              desc:
+                "Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency.",
+            },
+            {
+              backgroundImage: "https://images2.alphacoders.com/724/724677.jpg",
+              name: "Mercedes-Benz C-Class Cabriolet",
+              desc:
+                "The C-Class Cabriolet shows an ever-fresh face to the sun. Four of you can take in the sky. Ride in coupelike comfort under a rich fabric top.",
+            },
+          ].map((item, index) => (
             <div
-              className="swiper-content"
+              key={index}
+              className="item"
               style={{
-                position: "relative",
-                overflow: "hidden",
-                borderRadius: "10px",
-                cursor: "pointer",
-                transition: "transform 0.3s",
+                backgroundImage: `url(${item.backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
-              <img
-                src={photo.src}
-                alt={photo.title}
-                style={{
-                  width: "100%",
-                  borderRadius: "10px",
-                  transition: "transform 0.3s",
-                }}
-                className="swiper-image"
-              />
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "10px",
-                  left: "10px",
-                  color: "white",
-                  fontWeight: "bold",
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  padding: "5px 10px",
-                  borderRadius: "5px",
-                }}
-              >
-                {photo.title}
+              <div className="content">
+                <div className="name">{item.name}</div>
+                <div className="desc">{item.desc}</div>
+                <button>More Info</button>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <style jsx>{`
-        .swiper-content:hover .swiper-image {
-          transform: scale(1.1); /* Hover qilinganda kattalashtiradi */
-        }
-      `}</style>
+          ))}
+        </div>
+        {/* Tugmalar */}
+        <div className="button">
+          <button className="prev" onClick={handlePrev} title="Previous">
+            orqaga
+            
+          </button>
+          <button className="next" onClick={handleNext} title="Next">
+            oldinga
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default PhotoGallery;
+export default Slider;
