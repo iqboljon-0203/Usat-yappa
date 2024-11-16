@@ -1,20 +1,26 @@
 import React, { useRef } from "react";
 import "./App.css";
-
-const Slider = () => {
+import SnowGirl from "../../assets/logos/girl.png";
+import Girls from "../../assets/logos/girls.png";
+import Exam from "../../assets/logos/lesson.png";
+import Tradition from "../../assets/logos/tradition.png";
+import NextIcon from "../../assets/logos/next.png";
+import PrevIcon from '../../assets/logos/left_icon.png'
+const Slider = ({setHandleNextButton,setHandlePrevButton}) => {
   const slideRef = useRef(); // Slaydni boshqarish uchun
 
   // Keyingi slaydga o'tish
-  const handleNext = () => {
+  const handleNext = () => {    
     const items = slideRef.current.children;
     slideRef.current.appendChild(items[0]); // Birinchi elementni oxiriga o'tkazadi
   };
-
+  setHandleNextButton(handleNext)
   // Oldingi slaydga o'tish
   const handlePrev = () => {
     const items = slideRef.current.children;
     slideRef.current.prepend(items[items.length - 1]); // Oxirgi elementni boshiga o'tkazadi
   };
+  setHandlePrevButton(handlePrev)
 
   return (
     <div id="main">
@@ -23,38 +29,34 @@ const Slider = () => {
           {/* Slayder elementlari */}
           {[
             {
-              backgroundImage:
-                "https://images.unsplash.com/photo-1610809376778-928ee2c3a561?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "BMW M4",
+              backgroundImage:SnowGirl,
+              name: "Qor o'yini",
               desc:
                 "The 2024 BMW M4 Coupe delivers signature pulse-pounding BMW M performance and aesthetics to match.",
             },
             {
-              backgroundImage:
-                "https://images.unsplash.com/photo-1625179904634-243c6cdd6421?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Porsche 911",
+              backgroundImage:Girls,               
+              name: "Navruz bayrami",
               desc:
                 "Engineered around Porsche’s iconic 911 engine with unique hybrid technologies and delivering unsurpassed Porsche and hybrid performance.",
             },
             {
-              backgroundImage:
-                "https://images.unsplash.com/photo-1597935370784-051cdebbe6a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Ferrari 488 Pista",
+              backgroundImage:Exam,
+              name: "Fan javohirlari granti imtixoni",
               desc:
                 "The Ferrari 488 Pista is powered by the most powerful V8 engine in the Maranello marque’s history and is the company’s special series sports car.",
             },
             {
-              backgroundImage:
-                "https://images.unsplash.com/photo-1453491945771-a1e904948959?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-              name: "Tesla Model S",
+              backgroundImage:Tradition,
+              name: "Navruz sayli",
               desc:
                 "Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency.",
             },
             {
-              backgroundImage: "https://images2.alphacoders.com/724/724677.jpg",
-              name: "Mercedes-Benz C-Class Cabriolet",
+              backgroundImage:SnowGirl,
+              name: "Qor o'yini",
               desc:
-                "The C-Class Cabriolet shows an ever-fresh face to the sun. Four of you can take in the sky. Ride in coupelike comfort under a rich fabric top.",
+                "The 2024 BMW M4 Coupe delivers signature pulse-pounding BMW M performance and aesthetics to match.",
             },
           ].map((item, index) => (
             <div
@@ -63,13 +65,13 @@ const Slider = () => {
               style={{
                 backgroundImage: `url(${item.backgroundImage})`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition:"center",
               }}
             >
               <div className="content">
                 <div className="name">{item.name}</div>
                 <div className="desc">{item.desc}</div>
-                <button>More Info</button>
+                
               </div>
             </div>
           ))}
@@ -77,11 +79,11 @@ const Slider = () => {
         {/* Tugmalar */}
         <div className="button">
           <button className="prev" onClick={handlePrev} title="Previous">
-            orqaga
+            <img src={PrevIcon} alt="Prev icon" />
             
           </button>
           <button className="next" onClick={handleNext} title="Next">
-            oldinga
+            <img src={NextIcon} alt="Next icon" />
           </button>
         </div>
       </div>

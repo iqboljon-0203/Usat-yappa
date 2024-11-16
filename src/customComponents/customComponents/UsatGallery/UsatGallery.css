@@ -3,13 +3,14 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px 100px;
+    padding-bottom: 0;
 }
 .usat_gallery_container {
     width: 100%;
     background-color: #21466d;
     border-radius: 30px;
     padding: 20px;
-    height: 700px;
+    height: 840px;
     padding-top: 0px;
     position: relative;
 }
@@ -20,12 +21,12 @@
     justify-content: space-between;
 }
 .usat_gallery_title {
-    width: 40%;
+    width: 100%;
     font-family: Manrope;
 font-size: 32px;
 font-weight: 700;
 line-height: 38.4px;
-text-align: left;
+text-align: center;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 
@@ -35,7 +36,7 @@ text-decoration-skip-ink: none;
     padding-top: 40px;
     padding-bottom: 20px;
 }
-.usat_gallery_buttons {
+/* .usat_gallery_buttons {
     display: none;
     width: 15%;
     height: 86px;
@@ -68,11 +69,11 @@ text-decoration-skip-ink: none;
 .usat_gallery_button_left:hover,
 .usat_gallery_button_right:hover {
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.5);
-}
+} */
 
 @media screen and (max-width: 1400px) {
     .usat_gallery_title{
-        width: 50%;
+        width: 100%;
     }
     .usat_gallery_buttons {
     width: 20%;
@@ -87,7 +88,7 @@ text-decoration-skip-ink: none;
         padding: 20px 20px;
     }
     .usat_gallery_title{
-        width: 60%;
+        width: 100%;
         padding-top: 20px;
     }
     .usat_gallery_buttons {
@@ -101,7 +102,7 @@ text-decoration-skip-ink: none;
 @media screen and (max-width: 900px) {
     .usat_gallery_title{
         padding-top: 20px;
-        width: 60%;
+        width: 100%;
          font-size: 30px;
     font-weight: 700;
     line-height: 38.2px;
@@ -116,7 +117,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 800px) {
     .usat_gallery_title{
-        width: 60%;
+        width: 100%;
         padding-top: 20px;
          font-size: 28px;
     font-weight: 700;
@@ -132,7 +133,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 700px) {
     .usat_gallery_title{
-        width: 70%;
+        width: 100%;
         padding-top: 20px;
          font-size: 28px;
     font-weight: 700;
@@ -148,7 +149,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 650px) {
     .usat_gallery_title{
-        width: 70%;
+        width: 100%;
         padding-top: 20px;
          font-size: 26px;
     font-weight: 700;
@@ -166,7 +167,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 550px) {
     .usat_gallery_title{
-        width: 70%;
+        width: 100%;
         padding-top: 20px;
          font-size: 26px;
     font-weight: 700;
@@ -187,7 +188,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 490px) {
     .usat_gallery_title{
-        width: 70%;
+        width: 100%;
         padding-top: 20px;
          font-size: 26px;
     font-weight: 700;
@@ -216,7 +217,7 @@ text-decoration-skip-ink: none;
 }
 @media screen and (max-width: 450px) {
     .usat_gallery_title{
-        width: 70%;
+        width: 100%;
         padding-top: 20px;
          font-size: 22px;
     font-weight: 700;
