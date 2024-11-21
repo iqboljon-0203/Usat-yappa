@@ -9,7 +9,7 @@ import TDMI from "../../assets/logos/tmi.png"
 import UnicumLogo from '../../assets/logos/unicum_logo.svg'
 import DjangoLogo from '../../assets/logos/django_logo.svg'
 // import required modules
-
+import { Pagination } from 'swiper/modules';
 export default function App() {
     return (
         <>
@@ -17,6 +17,10 @@ export default function App() {
                 slidesPerView={1}
                 spaceBetween={20}
                 className="mySwiper"
+                modules={[Pagination]}
+                pagination={{
+                    clickable: true,
+                }}
                 breakpoints={{
                     1100: {
                         slidesPerView: 3,

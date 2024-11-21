@@ -6,9 +6,6 @@ import "./UsatGallery.css"
 import NewSlider from '../../../components/NewSlider/App.jsx';
 import { useTranslation } from 'react-i18next';
 const UsatGallery = () => {
-    const [handleNextButton,setHandleNextButton]=useState(null);
-    const [handlePrevButton,setHandlePrevButton]=useState(null);
-    console.log(handlePrevButton);
     
   const { t } = useTranslation()
   return (
@@ -25,7 +22,7 @@ const UsatGallery = () => {
                       </div>
                   </div> */}
               </div>
-              <NewSlider setHandleNextButton={setHandleNextButton} setHandlePrevButton={setHandlePrevButton}></NewSlider>
+              <NewSlider></NewSlider>
           </div>
       </div>
   )

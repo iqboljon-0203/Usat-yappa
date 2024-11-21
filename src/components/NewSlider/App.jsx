@@ -6,7 +6,7 @@ import Exam from "../../assets/logos/lesson.png";
 import Tradition from "../../assets/logos/tradition.png";
 import NextIcon from "../../assets/logos/next.png";
 import PrevIcon from '../../assets/logos/left_icon.png'
-const Slider = ({setHandleNextButton,setHandlePrevButton}) => {
+const Slider = () => {
   const slideRef = useRef(); // Slaydni boshqarish uchun
 
   // Keyingi slaydga o'tish
@@ -14,13 +14,11 @@ const Slider = ({setHandleNextButton,setHandlePrevButton}) => {
     const items = slideRef.current.children;
     slideRef.current.appendChild(items[0]); // Birinchi elementni oxiriga o'tkazadi
   };
-  setHandleNextButton(handleNext)
   // Oldingi slaydga o'tish
   const handlePrev = () => {
     const items = slideRef.current.children;
     slideRef.current.prepend(items[items.length - 1]); // Oxirgi elementni boshiga o'tkazadi
   };
-  setHandlePrevButton(handlePrev)
 
   return (
     <div id="main">

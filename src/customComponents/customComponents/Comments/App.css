@@ -29,6 +29,18 @@
 
 
 }
+.comment_left_list::-webkit-scrollbar {
+    width: 8px; /* Skroll kengligi */
+  }
+  
+  .comment_left_list::-webkit-scrollbar-thumb {
+    background-color: #fff;/* Skroll rangini tanlang */
+    border-radius: 30px;
+  }
+  
+  .comment_left_list::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(245, 246, 250, 1); /* Hover effekti */
+  }
 .comment_left_list_item_left, .comment_left_list_item_right{
     width: 50%;
     height: 100%;
